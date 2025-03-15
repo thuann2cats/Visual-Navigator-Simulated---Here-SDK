@@ -4,8 +4,7 @@ This is the "Navigation" example app from Here SDK tutorials (originally written
 
 ![Demo Screenshot](./Screenshot%202025-03-15%20121642.png)
 
-![Demo Video](./screen-20250315-113936.mp4)
-[Alternative link](https://photos.google.com/share/AF1QipNeNzPCMpNXyba0d8DS-odMMoFMBijIoCUZmN1KLkgwbH34chDN2z0guZLH96Futw/photo/AF1QipOF-UmQn30AY97gQRsJ3MEWN-pqvLIX9qxlVas_?key=MFBscFdkeFJ3MnQ1N1Z1TzJlTmFCOXhrMWpxN1Jn)
+[Video](https://photos.google.com/share/AF1QipNeNzPCMpNXyba0d8DS-odMMoFMBijIoCUZmN1KLkgwbH34chDN2z0guZLH96Futw/photo/AF1QipOF-UmQn30AY97gQRsJ3MEWN-pqvLIX9qxlVas_?key=MFBscFdkeFJ3MnQ1N1Z1TzJlTmFCOXhrMWpxN1Jn)
 
 
 
