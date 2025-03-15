@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Navigation</string>
+    
+    <!-- Consent state messages -->
+    <string name="consent_state_granted">You have granted your consent to participate in the HERE data improvement program. Thank you for your contribution.</string>
+    <string name="consent_state_denied">You have not granted your consent to participate in the HERE data improvement program.</string>
+    
+    <!-- Menu items -->
+    <string name="about">About</string>
+</resources>
