@@ -2,7 +2,7 @@
 
 This is the "Navigation" example app from Here SDK tutorials (originally written in Java), converted to work in Jetpack Compose & Kotlin. The location movement is simulated to demonstrate the visual navigator's behaviors.
 
-[Demo Video](./screen-20250315-113936.mp4)
+![Demo Video](./screen-20250315-113936.mp4)
 
 Original "Navigation" example app: [here-sdk-examples/examples/latest/navigate/android/Navigation at master · heremaps/here-sdk-examples](https://github.com/heremaps/here-sdk-examples/tree/master/examples/latest/navigate/android/Navigation)
 
