@@ -2,7 +2,7 @@
 
 This is the "Navigation" example app from Here SDK tutorials (originally written in Java), converted to work in Jetpack Compose & Kotlin. The location movement is simulated to demonstrate the visual navigator's behaviors.
 
-[Demo Video](D:\Programming\Android_Studio\Navigation\screen-20250315-113936.mp4)
+[Demo Video](./screen-20250315-113936.mp4)
 
 Original "Navigation" example app: [here-sdk-examples/examples/latest/navigate/android/Navigation at master · heremaps/here-sdk-examples](https://github.com/heremaps/here-sdk-examples/tree/master/examples/latest/navigate/android/Navigation)
 
@@ -16,7 +16,7 @@ Original "Navigation" example app: [here-sdk-examples/examples/latest/navigate/a
 ### Setting up various Here SDK objects (while loading the app)
 
 #### VisualNavigator
-Line 58: D:\Programming\Android_Studio\Navigation\app\src\main\java\com\example\navigation\NavigationExample.kt
+[NavigationExample.kt:58](./app/src/main/java/com/example/navigation/NavigationExample.kt#L58)
 ```kotlin
 init {
     // Initialize the positioning providers, navigator, and other components
@@ -29,13 +29,13 @@ init {
 ```
 
 #### RouteCalculator
-Line 59: D:\Programming\Android_Studio\Navigation\app\src\main\java\com\example\navigation\App.kt
+[App.kt:59](./app/src/main/java/com/example/navigation/App.kt#L59)
 ```kotlin
 private val routeCalculator = RouteCalculator()
 ```
 
 #### LocationEngine
-Line 44: D:\Programming\Android_Studio\Navigation\app\src\main\java\com\example\navigation\HEREPositioningProvider.kt
+[HEREPositioningProvider.kt:44](./app/src/main/java/com/example/navigation/HEREPositioningProvider.kt#L44)
 ```kotlin
 try {
     consentEngine = ConsentEngine()
@@ -46,7 +46,7 @@ try {
 ```
 
 #### VisualNavigator added to LocationEngine to receive location updates
-Line 77: D:\Programming\Android_Studio\Navigation\app\src\main\java\com\example\navigation\HEREPositioningProvider.kt
+[HEREPositioningProvider.kt:77](./app/src/main/java/com/example/navigation/HEREPositioningProvider.kt#L77)
 ```kotlin
 fun startLocating(updateListener: LocationListener, accuracy: LocationAccuracy) {
     if (locationEngine.isStarted) {
@@ -64,7 +64,7 @@ fun startLocating(updateListener: LocationListener, accuracy: LocationAccuracy) 
 ```
 
 ### Long-press listeners to set start/destination waypoints
-Line 323: D:\Programming\Android_Studio\Navigation\app\src\main\java\com\example\navigation\App.kt
+[App.kt:323](./app/src/main/java/com/example/navigation/App.kt#L323)
 ```kotlin
 private fun setLongPressGestureHandler() {
     mapView.gestures.setLongPressListener { gestureState, touchPoint ->
@@ -90,7 +90,7 @@ private fun setLongPressGestureHandler() {
 ```
 
 ### When the navigation starts, the route needs to be calculated:
-Line 36: D:\Programming\Android_Studio\Navigation\app\src\main\java\com\example\navigation\RouteCalculator.kt
+[RouteCalculator.kt:36](./app/src/main/java/com/example/navigation/RouteCalculator.kt#L36)
 ```kotlin
 routingEngine.calculateRoute(
     waypoints,
@@ -100,7 +100,7 @@ routingEngine.calculateRoute(
 ```
 
 ### Once computed, the route polylines need to be drawn on the map
-Line 171: D:\Programming\Android_Studio\Navigation\app\src\main\java\com\example\navigation\App.kt
+[App.kt:171](./app/src/main/java/com/example/navigation/App.kt#L171)
 ```kotlin
 if (routingError == null && routes != null) {
     val route = routes[0]
@@ -112,7 +112,7 @@ if (routingError == null && routes != null) {
 ```
 
 ### The visual navigator is set to follow that route
-Line 150: D:\Programming\Android_Studio\Navigation\app\src\main\java\com\example\navigation\NavigationExample.kt
+[NavigationExample.kt:150](./app/src/main/java/com/example/navigation/NavigationExample.kt#L150)
 ```kotlin
 visualNavigator.setRoute(route)
 
@@ -121,7 +121,18 @@ visualNavigator.setCameraBehavior(DynamicCameraBehavior())
 ```
 
 ### Voice assistant's directions upon receiving updates on new progress along the route:
-Various breakpoints (line 317, 301, 288, 274, 236, 197, 178, 155, 133, 120, 66) in D:\Programming\Android_Studio\Navigation\app\src\main\java\com\example\navigation\NavigationEventHandler.kt for various event listeners.
+Various breakpoints in [NavigationEventHandler.kt](./app/src/main/java/com/example/navigation/NavigationEventHandler.kt) for various event listeners:
+- [Line 66](./app/src/main/java/com/example/navigation/NavigationEventHandler.kt#L66): Setup listeners
+- [Line 120](./app/src/main/java/com/example/navigation/NavigationEventHandler.kt#L120): Route Progress Listener
+- [Line 133](./app/src/main/java/com/example/navigation/NavigationEventHandler.kt#L133): Destination Reached Listener
+- [Line 155](./app/src/main/java/com/example/navigation/NavigationEventHandler.kt#L155): Milestone Status Listener
+- [Line 178](./app/src/main/java/com/example/navigation/NavigationEventHandler.kt#L178): Safety Camera Warning Listener
+- [Line 197](./app/src/main/java/com/example/navigation/NavigationEventHandler.kt#L197): Speed Warning Listener
+- [Line 236](./app/src/main/java/com/example/navigation/NavigationEventHandler.kt#L236): Navigable Location Listener
+- [Line 274](./app/src/main/java/com/example/navigation/NavigationEventHandler.kt#L274): Route Deviation Listener
+- [Line 288](./app/src/main/java/com/example/navigation/NavigationEventHandler.kt#L288): Event Text Listener
+- [Line 301](./app/src/main/java/com/example/navigation/NavigationEventHandler.kt#L301): Lane Assistance Listeners
+- [Line 317](./app/src/main/java/com/example/navigation/NavigationEventHandler.kt#L317): Road Attributes Listener
 
 In this demo app, most events do not result in any UI feedbacks and only log the information on LogCat. Please open LogCat and filter for the appropriate tag (for example, `NavigationEventHandler` to see those messages).
 
